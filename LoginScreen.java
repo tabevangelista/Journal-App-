@@ -25,6 +25,7 @@ public class LoginScreen implements ActionListener {
         Lframe.setTitle("Login");
         Lframe.setResizable(false);
 
+
     // create Panel
         Lpanel = new JPanel();
         Lpanel.setSize(350, 200);
@@ -67,6 +68,7 @@ public class LoginScreen implements ActionListener {
 }
 
     @Override
+    // when button is pressed 
     public void actionPerformed(ActionEvent e) {
         String user = userField.getText();
         String password = passwordField.getText();
@@ -75,6 +77,7 @@ public class LoginScreen implements ActionListener {
             success.setText("Login successful");
             success.setBounds(120, 120, 300, 25);
             entry = new NewEntry();
+            Lframe.setVisible(false); // closes login screen once submitted correctly 
         }
 
         else {
