@@ -1,0 +1,30 @@
+import java.awt.FileDialog;
+
+public class NewFileFunction {
+
+    NewEntry newEntry;
+    String fileName, fileAddress;
+    
+    public NewFileFunction(NewEntry newEntry) {
+
+        this.newEntry = newEntry;
+    }
+
+    public void newFile() {
+        newEntry.entryText.setText("");
+        newEntry.entryFrame.setTitle("New");
+    }
+
+    public void openFile() {
+        FileDialog dialog = new FileDialog(newEntry.entryFrame, "Open", FileDialog.LOAD);
+        dialog.setVisible(true);
+
+        if ((dialog.getFile())!= null) {
+            fileName = dialog.getFile();
+            fileAddress = dialog.getDirectory();
+            newEntry.entryFrame.setTitle(fileName);
+        }
+    }
+
+
+}
